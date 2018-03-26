@@ -2,4 +2,4 @@
 #mainscript.sh
 
 #Install Display driver
-sh ./drivers_script.sh
+sh ./driversinstall_script.sh
