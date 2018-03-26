@@ -13,10 +13,12 @@ zcat ./rp_usbdisplay/shoplogo.fb.gz > /dev/fb1
 
 #make the display autostart
 #sudo nano /etc/modules #aggiungere rp_usbdisplay come nuova riga al file
-if ['grep rp_usbdisplay /etc/modules']
-then
-  echo rp_usbdisplay alreay present in /etc/modules file.
-else
+grepoutput=$(grep rp_usbdisplay /etc/modules)
+
+if [-z $grepoutput]
+then  
   echo appending rp_usbdisplay to /etc/modules file.
   sudo echo "rp_usbdisplay" >> /etc/modules
+else
+  echo rp_usbdisplay alreay present in /etc/modules file.
 fi
