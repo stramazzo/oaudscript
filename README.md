@@ -12,4 +12,5 @@ How to
 #
 9)Connect the usb display
 10)cd oaudscript
-11)sh ./displaytest_script.sh
+11)sh ./displayfinalize_and_test_script.sh
+
