@@ -1,11 +1,15 @@
 #!/bin/bash
-#This script should test the usb display.
+#This script should finalize and test the usb display.
 
-#clone pimoroni rp_usbdisplay repository
-git clone https://github.com/pimoroni/rp_usbdisplay
+#modprobe
+SUDO modprobe rp_usbdisplay
+#find fb
+cat /proc/fb | grep rpusbdisplay_fb
+#test display
+zcat shoplogo.fb.gz > /dev/fb1
 
-#launch rp_usbdisplay driver install for unsupported kernel
-cd rp_usbdisplay/dkms
-sudo apt install dkms raspberrypi-kernel-headers
-sudo dpkg -i rp-usbdisplay-dkms_1.0_all.deb
+#make the display autostart
+#sudo nano /etc/modules #aggiungere rp_usbdisplay come nuova riga al file
+echo "rp_usbdisplay" >> /etc/modules
+
 sudo reboot
