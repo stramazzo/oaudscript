@@ -2,7 +2,7 @@
 #This script should finalize and test the usb display.
 
 #modprobe
-SUDO modprobe rp_usbdisplay
+sudo modprobe rp_usbdisplay
 #find fb
 cat /proc/fb | grep rpusbdisplay_fb
 #test display
