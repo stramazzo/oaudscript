@@ -18,5 +18,5 @@ then
   echo rp_usbdisplay alreay present in /etc/modules file.
 else
   echo appending rp_usbdisplay to /etc/modules file.
-  echo "rp_usbdisplay" >> /etc/modules
+  sudo echo "rp_usbdisplay" >> /etc/modules
 fi
